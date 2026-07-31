@@ -2,6 +2,9 @@ import os
 import requests
 import smtplib
 
+API_KEY = os.environ["API_KEY"]
+MY_EMAIL = os.environ["MY_EMAIL"]
+APP_PASSWORD = os.environ["APP_PASSWORD"]
 
 parameters = {
     "lat": 5.545282,
@@ -10,9 +13,6 @@ parameters = {
     "cnt": 4,
 }
 
-API_KEY = os.environ["API_KEY"]
-MY_EMAIL = os.environ["MY_EMAIL"]
-APP_PASSWORD = os.environ["APP_PASSWORD"]
 
 response = requests.get(
     "https://api.openweathermap.org/data/2.5/forecast",
@@ -32,6 +32,6 @@ for forecast in data["list"]:
             connection.sendmail(
                 from_addr=MY_EMAIL,
                 to_addrs="jonesagbramu@gmail.com",
-                msg="Subject:Weather Alert\n\nGo out today with an umbrella ☔"
+                msg="Subject:Weather Alert\n\nGo out today with an umbrella "
             )
             break
