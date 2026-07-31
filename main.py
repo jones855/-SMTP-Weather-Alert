@@ -1,8 +1,7 @@
 import os
 import requests
 import smtplib
-
-API_KEY = os.environ["API_kEY"]
+API_KEY = os.environ["API_KEY"]
 
 parameters = {
     "lat": 5.545282,
