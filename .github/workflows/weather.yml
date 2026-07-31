@@ -26,6 +26,7 @@ jobs:
           pip install requests
 
       - name: Run weather script
+        working-directory: Day 35
         env:
           API_KEY: ${{ secrets.API_KEY }}
           MY_EMAIL: ${{ secrets.MY_EMAIL }}
