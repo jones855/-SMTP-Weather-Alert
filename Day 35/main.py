@@ -25,7 +25,7 @@ data = response.json()
 for forecast in data["list"]:
     weather_id = forecast["weather"][0]["id"]
 
-    if weather_id < 700:
+    if weather_id > 700:
         with smtplib.SMTP("smtp.gmail.com", 587) as connection:
             connection.starttls()
             connection.login(MY_EMAIL, APP_PASSWORD)
